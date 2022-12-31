@@ -1,3 +1,7 @@
+// The problem statment is tricky but if you see the input , the array is containing the roteted array
+// so here just need to check if the target is present in array or not 
+// if it is , then retun it's index otherwise -1 
+
 #include<bits/stdc++.h>
 using namespace std;
 

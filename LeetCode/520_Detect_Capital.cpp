@@ -2,6 +2,7 @@
 // All letters in this word are not capitals, like "leetcode".
 // Only the first letter in this word is capital, like "Google".
 
+
 // Weekly Contest 326 1st problem jan 1 2023
 
 #include<bits/stdc++.h>

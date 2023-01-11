@@ -1,9 +1,7 @@
-
 // 11 jan 2023
 
 #include <bits/stdc++.h>
 using namespace std;
-
 
 class Solution {
 public:

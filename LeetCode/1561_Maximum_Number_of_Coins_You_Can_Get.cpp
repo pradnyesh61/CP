@@ -1,4 +1,6 @@
 
+//Two Approach 
+
 // 13 jan 2023
 
 #include <bits/stdc++.h>
@@ -45,3 +47,10 @@ public:
 
     }
 };
+
+int main()
+{
+    vector<int> v = {9,8,7,6,5,1,2,3,4};
+    Solution s;
+    cout<<s.maxCoins(v);
+}

@@ -39,3 +39,9 @@ public:
         return count;
     }
 };
+
+int main()
+{
+    Solution s;
+    cout<<s.minAddToMakeValid("(((");
+}

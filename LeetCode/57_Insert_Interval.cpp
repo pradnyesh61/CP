@@ -47,3 +47,12 @@ public:
     return v;
     }
 };
+
+int main()
+{
+    vector<vector<int>> intervals = {{1,2},{3,5},{6,7},{8,10},{12,16}};
+    vector<int> newInterval = {4,8};
+
+    Solution s;
+    cout<<s.insert(intervals,newInterval); 
+}

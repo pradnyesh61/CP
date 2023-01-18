@@ -3,24 +3,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int minimumMoves(string s) {
+    int minimumMoves(string s)
+    {
         int count = 0;
         int move = 0;
 
-int i =0;
-       while(i < s.length())
+        int i = 0;
+        while (i < s.length())
         {
             int j;
-            if(s[i] == 'O')
+            if (s[i] == 'O')
             {
                 i++;
                 continue;
             }
-            for( j = i ; j < i+3 ; j++)
+            for (j = i; j < i + 3; j++)
             {
-                if(s[i] == 'X')
+                if (s[i] == 'X')
                 {
                     count++;
                 }
@@ -28,11 +30,10 @@ int i =0;
 
             i = j;
 
-            if(count>0)
+            if (count > 0)
             {
                 move++;
             }
-
         }
 
         return move;

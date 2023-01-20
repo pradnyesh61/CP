@@ -12,7 +12,30 @@ using namespace std;
 class Solution
 {
 public:
-// THis is using address of vectors so that space use is less
+// More Optimise way the condition
+    void nds(int i, int n, vector<int> &nums, set<vector<int>> &ans, vector<int> &temp)
+    {
+        if (i >= n)
+        {
+            if (temp.size() >= 2)
+            {
+                ans.insert(temp);
+            }
+            return;
+        }
+
+        if (!temp.size() || nums[i] >= temp.back())
+        {
+
+            temp.push_back(nums[i]);
+            nds(i + 1, n, nums, ans, temp);
+            temp.pop_back();
+        }
+
+        nds(i + 1, n, nums, ans, temp);
+    }
+
+    // THis is using address of vectors so that space use is less
     void nds(int i, int n, vector<int> &nums, set<vector<int>> &ans, vector<int> &temp)
     {
         if (i >= n)

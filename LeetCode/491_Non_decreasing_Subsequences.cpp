@@ -1,3 +1,10 @@
+// First method will work but gives TLE 
+// In second method TLE is not coming
+// we can use set<vector<int>> for distinct sequence
+// and while returning we need to return 2D vector
+// so for that we can just convert / TypeCast the set<vector<int> 
+// check the return type
+
 // 20 Jan 2023
 
 #include <bits/stdc++.h>

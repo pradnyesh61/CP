@@ -1,3 +1,27 @@
+/*
+back tracking 
+we have root ,if root is null we will return
+if root is not null that means we will be having 1 element
+so we will add that to  string
+now we need to check if root->left is null  and root->right is null
+if it is then only we will add that string to vector as our ans 
+paths to leaf
+if it is not then;
+we need to check that if root has left child 
+if it does then we will add the val to string
+and send it to the backtrack with left of root ie. root->left
+and when it returns we need to pop back the added string 
+for that pop back is use but here is twist
+pop back will remove only one character at a time and we dont know what is the length of the val 
+so we will take a lenght of val and add 2 ,why 
+because we are adding - and > 
+each counts as a character
+now loop it and do pop_back
+
+same for right element of root
+
+
+*/
 
 // 29 Jan 2023
 

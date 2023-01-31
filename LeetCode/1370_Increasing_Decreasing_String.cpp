@@ -3,45 +3,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    string sortString(string s) {
-        
-        map<char,int> m;
-        for(int i = 0; i < s.length() ; i++){
+    string sortString(string s)
+    {
+
+        map<char, int> m;
+        for (int i = 0; i < s.length(); i++)
+        {
             m[s[i]]++;
         }
 
-       
         int n = s.size();
         string temp;
         int l = temp.size();
 
-        while(l!= n){
-          
-                for(auto it = m.begin(); it != m.end(); it++){
-                    if(it->second != 0){
-                        temp.push_back(it->first);
-                        it->second--;
-                        ++l;
-                    }
-                    
-                }
+        while (l != n)
+        {
 
-                for (auto it = m.rbegin(); it != m.rend(); it++){  
-                    if(it->second != 0){
-                       temp.push_back(it->first);
-                        it->second--;
-                        ++l;        
-                    }
-                    
+            for (auto it = m.begin(); it != m.end(); it++)
+            {
+                if (it->second != 0)
+                {
+                    temp.push_back(it->first);
+                    it->second--;
+                    ++l;
                 }
+            }
+
+            for (auto it = m.rbegin(); it != m.rend(); it++)
+            {
+                if (it->second != 0)
+                {
+                    temp.push_back(it->first);
+                    it->second--;
+                    ++l;
+                }
+            }
         }
 
         return temp;
     }
-
 };
 /*
 class Solution {
@@ -59,7 +62,7 @@ public:
                 if (itr->second != 0){
                     itr->second = itr->second - 1;
                     res.push_back(itr->first);
-                    ++size;  
+                    ++size;
                 }
             }
             //------
@@ -70,7 +73,7 @@ public:
                     ++size;
                 }
             }
-        }   
+        }
         return res;
     }
 };

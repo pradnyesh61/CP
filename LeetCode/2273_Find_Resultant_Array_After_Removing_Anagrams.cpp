@@ -7,7 +7,6 @@ class Solution{
 public:
     vector<string> removeAnagrams(vector<string> &words)
     {
-
         vector<string> v;
         int n = words.size();
 

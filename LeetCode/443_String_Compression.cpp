@@ -3,32 +3,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    int compress(vector<char>& chars) {
-        
+    int compress(vector<char> &chars)
+    {
+
         int count = 1;
-       
+
         chars.push_back('0');
         int j = 0;
 
-        for(int i = 0 ; i < chars.size()-1 ; i++)
+        for (int i = 0; i < chars.size() - 1; i++)
         {
-            if(chars[i] == chars[i+1])
+            if (chars[i] == chars[i + 1])
             {
                 count++;
             }
-            else{
-                 chars[j++] = chars[i];
-                 if(count != 1){
-                 string s = to_string(count);
-                 for(int k = 0 ; k < s.length() ;k++)
-                 {
-                     chars[j++] = s[k];
-                 }
-                 }
-                 count = 1;
+            else
+            {
+                chars[j++] = chars[i];
+                if (count != 1)
+                {
+                    string s = to_string(count);
+                    for (int k = 0; k < s.length(); k++)
+                    {
+                        chars[j++] = s[k];
+                    }
+                }
+                count = 1;
             }
         }
 
@@ -38,7 +41,7 @@ public:
         // {
         //     m[chars[i]]++;
         // }
-        
+
         // int i = 0;
         // for(auto it: m)
         // {
@@ -55,7 +58,6 @@ public:
         //     }
         // }
 
-    
         return j;
     }
 };

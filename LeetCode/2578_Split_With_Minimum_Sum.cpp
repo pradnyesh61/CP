@@ -2,20 +2,22 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-class Solution {
+class Solution
+{
 public:
-    int splitNum(int num) {
+    int splitNum(int num)
+    {
         string s = to_string(num);
-        sort(s.begin(),s.end());
-        string a,b;
-        for(int i = 0 ;i < s.length() ; i += 2)
+        sort(s.begin(), s.end());
+        string a, b;
+        for (int i = 0; i < s.length(); i += 2)
         {
             a += s[i];
-            b += s[i+1];
+            b += s[i + 1];
         }
         int aa = stoi(a);
         int bb = stoi(b);
-        
-        return aa+bb;
+
+        return aa + bb;
     }
 };

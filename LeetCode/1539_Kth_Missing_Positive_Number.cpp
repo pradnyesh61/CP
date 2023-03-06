@@ -3,10 +3,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
     // int findKthPositive(vector<int>& arr, int k) {
-        
+
     //     int i = 1, j =0;
 
     //     while(k)
@@ -25,15 +26,15 @@ public:
     //     return i-1;
     // }
 
-     int findKthPositive(vector<int>& arr, int k) {
-         for(auto it : arr)
-         {
-            if(it <= k)
+    int findKthPositive(vector<int> &arr, int k)
+    {
+        for (auto it : arr)
+        {
+            if (it <= k)
             {
                 k++;
             }
-         }
-         return k;
-     }
-
+        }
+        return k;
+    }
 };

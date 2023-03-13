@@ -66,7 +66,6 @@ public:
                         return false;
                     }
                 }
-
                 q.pop();
                 if (q.size() > 0)
                 {

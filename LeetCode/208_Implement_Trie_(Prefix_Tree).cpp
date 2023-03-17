@@ -6,9 +6,9 @@ using namespace std;
 class Trie
 {
 private:
-  vector<string> v;
+    vector<string> v;
+
 public:
-  
     Trie()
     {
     }
@@ -44,7 +44,7 @@ public:
                 continue;
             }
 
-            for (int j = 0; j <n && k < l; j++)
+            for (int j = 0; j < n && k < l; j++)
             {
                 if (prevWord[j] == prefix[k] && k < l)
                 {

@@ -3,67 +3,64 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Trie {
+class Trie
+{
+private:
+  vector<string> v;
 public:
-
-    vector<string> v;
-
-    Trie() {
-
+  
+    Trie()
+    {
     }
-    
-    void insert(string word) {
+
+    void insert(string word)
+    {
         v.push_back(word);
     }
-    
-    bool search(string word) {
-        if(find(v.begin(),v.end(),word) != v.end())
+
+    bool search(string word)
+    {
+        if (find(v.begin(), v.end(), word) != v.end())
         {
             return true;
         }
 
         return false;
     }
-    
-    bool startsWith(string prefix) {
 
-   
-        if(v.size() == 0)
+    bool startsWith(string prefix)
+    {
+        int l = prefix.size();
+        for (int i = 0; i < v.size(); i++)
         {
-            return false;
-        }
 
-       
-            for(int i = 0 ; i < v.size() ; i++)
-            {   
-            
-                string prevWord = v[i];
-                int k = 0;
+            string prevWord = v[i];
+            int k = 0;
 
-                if(prefix.size() > prevWord.size())
-                {
-                    continue;
-                }
+            int n = prevWord.size();
 
-
-                for(int j = 0; j < prevWord.size() && k < prefix.size() ; j++)
-                {
-                    if(prevWord[j] == prefix[k] && k < prefix.size())
-                    {
-                        k++;
-                    }
-                    else{
-                        break;
-                    }
-                }
-
-                    if(k == prefix.size())
-                    {
-                        return true;
-
-                    }
-
+            if (l > n)
+            {
+                continue;
             }
+
+            for (int j = 0; j <n && k < l; j++)
+            {
+                if (prevWord[j] == prefix[k] && k < l)
+                {
+                    k++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            if (k == l)
+            {
+                return true;
+            }
+        }
 
         return false;
     }

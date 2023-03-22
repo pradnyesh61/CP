@@ -30,7 +30,7 @@ public:
 
         return dp[n] = (topDown(n - 1) + topDown(n - 2)) % mod;
     }
-    long long int bottomUp1(int n)
+    long long int bottomUp(int n)
     {
         // code here
         vector<long long int> dp(100001, 0);

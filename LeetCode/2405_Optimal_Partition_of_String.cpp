@@ -3,10 +3,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
     // int partitionString(string s) {
-        
+
     //     int count = 0;
     //     string s1 = "";
 
@@ -20,7 +21,7 @@ public:
     //         }
     //         else{
     //             s1 += s[i];
-                
+
     //         }
     //     }
 
@@ -32,27 +33,24 @@ public:
     //     return count;
     // }
 
+    int partitionString(string s)
+    {
 
-    int partitionString(string s) {
-        
         int count = 1;
-        vector<int> v(26,-1);
+        vector<int> v(26, -1);
         int subStringStart = 0;
-        
-        for(int i = 0 ; i < s.length(); i++)
+
+        for (int i = 0; i < s.length(); i++)
         {
-            if(v[s[i]-'a'] >= subStringStart)
+            if (v[s[i] - 'a'] >= subStringStart)
             {
                 count++;
                 subStringStart = i;
             }
-            
-            v[s[i]-'a'] = i;
-            
+
+            v[s[i] - 'a'] = i;
         }
 
         return count;
     }
-
-
 };

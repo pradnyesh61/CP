@@ -72,7 +72,6 @@ public:
 
     int minCostClimbingStairs(vector<int> &cost)
     {
-
         // cost.push_back(0);
         // vector<int> dp(cost.size(),-1);
         // return Memoization(cost.size()-1, cost, dp);

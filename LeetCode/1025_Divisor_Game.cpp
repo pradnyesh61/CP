@@ -3,24 +3,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    bool divisorGame(int n) {
-        
+    bool divisorGame(int n)
+    {
+
         bool alice = true;
 
-        while( 1 < n)
+        while (1 < n)
         {
             n = n - 1;
-            
-            if(alice)
-            alice = false;
+
+            if (alice)
+                alice = false;
             else
-            alice = true;
+                alice = true;
         }
 
-        if(alice)
+        if (alice)
         {
             return false;
         }

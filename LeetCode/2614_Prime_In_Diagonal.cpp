@@ -3,10 +3,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-
     // bool prime(int n)
     // {
     //     if(n == 1)
@@ -27,14 +26,14 @@ public:
 
     bool prime(int n)
     {
-        if(n == 1)
+        if (n == 1)
         {
             return false;
         }
 
-        for(int i = 2 ; i < n/2 ; i++)
+        for (int i = 2; i < n / 2; i++)
         {
-            if(n%i == 0)
+            if (n % i == 0)
             {
                 return false;
             }
@@ -43,15 +42,16 @@ public:
         return true;
     }
 
-     int diagonalPrime(vector<vector<int>>& nums) {
+    int diagonalPrime(vector<vector<int>> &nums)
+    {
 
         int i = 0;
         int j = 0;
-        int k = nums.size()-1;
-        
+        int k = nums.size() - 1;
+
         vector<int> v;
 
-        for(int i = 0 ; i < nums.size() ; i++)
+        for (int i = 0; i < nums.size(); i++)
         {
             v.push_back(nums[i][j]);
             v.push_back(nums[i][k]);
@@ -59,18 +59,17 @@ public:
             k--;
         }
 
-        sort(v.begin(),v.end(),greater<int>());
+        sort(v.begin(), v.end(), greater<int>());
 
-        for(int i = 0 ; i < v.size() ; i++)
+        for (int i = 0; i < v.size(); i++)
         {
-            if(prime(v[i]))
+            if (prime(v[i]))
             {
                 return v[i];
             }
         }
 
         return 0;
-
     }
 
     // int diagonalPrime(vector<vector<int>>& nums) {

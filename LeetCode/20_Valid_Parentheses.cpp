@@ -6,6 +6,8 @@ using namespace std;
 class Solution
 {
 public:
+    //Below is the shorter version of below to this function 
+    // difference is lines of code
     bool isValid(string s)
     {
 

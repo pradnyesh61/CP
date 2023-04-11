@@ -3,13 +3,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
     // string removeStars(string s) {
-        
+
     //     stack<char> st;
-      
+
     //     for(int i = 0 ; i < s.length() ; i++)
     //     {
     //         if(s[i] == '*')
@@ -20,7 +20,7 @@ public:
     //             st.push(s[i]);
     //         }
     //     }
-        
+
     //     s ="";
 
     //     while(!st.empty())
@@ -35,7 +35,7 @@ public:
     // }
 
     //  string removeStars(string s) {
-        
+
     //     string temp = "";
 
     //     for(int i = 0 ; i < s.length() ; i++)
@@ -53,23 +53,24 @@ public:
 
     // }
 
-     string removeStars(string s) {
+    string removeStars(string s)
+    {
 
-         int j = 0;
+        int j = 0;
 
-        for(int i = 0 ; i < s.length() ; i++)
+        for (int i = 0; i < s.length(); i++)
         {
-            if(s[i] == '*')
+            if (s[i] == '*')
             {
-               j--;
+                j--;
             }
-            else{
+            else
+            {
                 s[j] = s[i];
                 j++;
             }
         }
 
-        return s.substr(0,j);
-
+        return s.substr(0, j);
     }
 };

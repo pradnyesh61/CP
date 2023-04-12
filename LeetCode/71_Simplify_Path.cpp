@@ -4,17 +4,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 // class Solution {
 // public:
 // //     string simplifyPath(string path) {
-        
+
 // //        string s = "";
-       
+
 // //         for(int i = 0; i < path.length(); i++)
 // //         {
 // //             cout<<i<<" "<<path[i]<<" = ";
-           
+
 // //            if(path[i] == '.')
 // //             {
 // //                 int count = 0;
@@ -36,7 +35,7 @@ using namespace std;
 // //             else{
 // //                 cout<<"length = "<<s.length()<<" = "<<s.size();
 // //                 //<<" := "<<s[s.length()-1]<<endl;
-                
+
 // //                 if(path[i] == '/')
 // //                 {
 // //                     if(s.length() == 0 || s.length()-1 >= 0 && s[s.length()-1] != '/')
@@ -61,12 +60,11 @@ using namespace std;
 // //     cout<<s<<endl;
 
 // //     s.pop_back();
-        
+
 // //      cout<<s<<endl;
 
 // //         return s;
 // //     }
-
 
 //     // string simplifyPath(string path) {
 
@@ -92,7 +90,6 @@ using namespace std;
 //     //                     count++;
 //     //                     i++;
 //     //                 }
-                    
 
 //     //                 if(count == 2)
 //     //                 {
@@ -121,7 +118,6 @@ using namespace std;
 //     //     }
 
 //     //     string s;
-       
 
 //     //     while(!st.empty())
 //     //     {
@@ -141,10 +137,10 @@ using namespace std;
 //     //         if(s[i] == '/')
 //     //         {
 //     //             j = i;
-                
+
 //     //         }
 //     //     }
-       
+
 //     //    cout<<s<<endl;
 //     //     reverse(s.begin(),s.end());
 
@@ -160,62 +156,63 @@ using namespace std;
 
 //     //    cout<<s<<endl;
 
-
 //     //    if(s.size() == 0)
 //     //    {
 //     //        return "/";
 //     //    }
 
 //     //     return s;
-        
+
 //     // }
-    
+
 // };
 
-					// 😉😉😉😉Please upvote if it helps 😉😉😉😉
-class Solution {
+// 😉😉😉😉Please upvote if it helps 😉😉😉😉
+class Solution
+{
 public:
-    string simplifyPath(string path) {
-        
+    string simplifyPath(string path)
+    {
+
         stack<string> st;
         string res;
-        
-        for(int i = 0;  i<path.size(); ++i)
+
+        for (int i = 0; i < path.size(); ++i)
         {
-            if(path[i] == '/')    
+            if (path[i] == '/')
                 continue;
             string temp;
-			// iterate till we doesn't traverse the whole string and doesn't encounter the last /
-            while(i < path.size() && path[i] != '/')
+            // iterate till we doesn't traverse the whole string and doesn't encounter the last /
+            while (i < path.size() && path[i] != '/')
             {
-				// add path to temp string
+                // add path to temp string
                 temp += path[i];
                 ++i;
             }
-            if(temp == ".")
+            if (temp == ".")
                 continue;
-			// pop the top element from stack if exists
-            else if(temp == "..")
+            // pop the top element from stack if exists
+            else if (temp == "..")
             {
-                if(!st.empty())
+                if (!st.empty())
                     st.pop();
             }
             else
-			// push the directory file name to stack
+                // push the directory file name to stack
                 st.push(temp);
         }
-        
-		// adding all the stack elements to res
-        while(!st.empty())
+
+        // adding all the stack elements to res
+        while (!st.empty())
         {
             res = "/" + st.top() + res;
             st.pop();
         }
-        
-		// if no directory or file is present
-        if(res.size() == 0)
+
+        // if no directory or file is present
+        if (res.size() == 0)
             return "/";
-        
+
         return res;
     }
 };

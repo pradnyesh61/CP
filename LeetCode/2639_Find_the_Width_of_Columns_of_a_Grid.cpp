@@ -3,22 +3,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> findColumnWidth(vector<vector<int>>& grid) {
-        
+    vector<int> findColumnWidth(vector<vector<int>> &grid)
+    {
+
         vector<int> v;
 
         int m = grid.size();
         int n = grid[0].size();
 
-        for(int i = 0 ; i < n ; i++)
+        for (int i = 0; i < n; i++)
         {
             int maxlen = 0;
-            for(int j = 0 ; j < m ; j++)
+            for (int j = 0; j < m; j++)
             {
                 string s = to_string(grid[j][i]);
-                if(maxlen < s.size())
+                if (maxlen < s.size())
                 {
                     maxlen = s.size();
                 }

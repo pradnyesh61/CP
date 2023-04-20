@@ -8,7 +8,6 @@ class Solution
 public:
     int findJudge(int n, vector<vector<int>> &trust)
     {
-
         vector<int> adj[n + 2];
 
         for (int i = 0; i < trust.size(); i++)

@@ -69,7 +69,7 @@ public:
             cout << endl;
         }
 
-        // print_char(dp,l,s,s1);
+       
 
         return l - dp[l][l];
     }
@@ -105,47 +105,7 @@ public:
         return l - prev[l];
     }
 
-    void print_char(vector<vector<int>> &dp, int l, string s, string s1)
-    {
-        int i = l;
-        int j = l;
-
-        string temp = "";
-        string common = "";
-
-        while (i > 0 || j > 0)
-        {
-            cout << s[i - 1] << " " << s[j - 1] << endl;
-            if (s[i - 1] == s1[j - 1])
-            {
-                common += s[i];
-                if (i > 0)
-                    i--;
-                if (j > 0)
-                    j--;
-            }
-            else
-            {
-                int a = dp[i - 1][j];
-                int b = dp[i][j - 1];
-
-                if (a < b)
-                {
-                    temp += s[i - 1];
-                    i--;
-                }
-                else
-                {
-                    temp += s1[j - 1];
-                    j--;
-                }
-            }
-        }
-
-        cout << "temp = " << temp << endl;
-        cout << "common = " << common << endl;
-    }
-
+ 
     int minInsertions(string s)
     {
 

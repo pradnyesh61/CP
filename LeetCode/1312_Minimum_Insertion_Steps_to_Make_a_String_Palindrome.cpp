@@ -69,8 +69,6 @@ public:
             cout << endl;
         }
 
-       
-
         return l - dp[l][l];
     }
 
@@ -105,7 +103,6 @@ public:
         return l - prev[l];
     }
 
- 
     int minInsertions(string s)
     {
 

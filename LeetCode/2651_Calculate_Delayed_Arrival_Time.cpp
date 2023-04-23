@@ -18,7 +18,7 @@ public:
         //         arrivalTime += 1;
         //     }
         // }
-
+        
         // return arrivalTime;
 
         return (arrivalTime + delayedTime) % 24;

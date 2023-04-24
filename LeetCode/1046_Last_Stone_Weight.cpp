@@ -3,36 +3,54 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-    int lastStoneWeight(vector<int> &stones)
-    {
+    int lastStoneWeight(vector<int>& stones) {
+        
+        priority_queue<int> pq(stones.begin(),stones.end());
 
-        priority_queue<int> pq(stones.begin(), stones.end());
-
-        while (!pq.empty())
+        while(pq.size()!= 1)
         {
-            int x = pq.top();
-            pq.pop();
-
-            if (pq.empty())
-            {
-                return x;
-            }
-
             int y = pq.top();
             pq.pop();
 
-            if (y <= x)
-            {
-                if (y != x)
-                {
-                    pq.push(x - y);
-                }
-            }
+            int x = pq.top();
+            pq.pop();
+
+            pq.push(y-x);
+
         }
 
-        return 0;
+        return pq.top();
     }
+
+    //   int lastStoneWeight(vector<int>& stones) {
+        
+    //     priority_queue<int> pq(stones.begin(),stones.end());
+
+    //     while(!pq.empty())
+    //     {
+    //         int x = pq.top();
+    //         pq.pop();
+
+    //         if(pq.empty())
+    //         {
+    //             return x;
+    //         }
+
+    //         int y = pq.top();
+    //         pq.pop();
+
+    //          if(y <= x)
+    //         {
+    //             if(y != x)
+    //             {
+    //                 pq.push(x-y);
+    //             }
+    //         }
+
+    //     }
+
+    //     return 0;
+    // }
 };

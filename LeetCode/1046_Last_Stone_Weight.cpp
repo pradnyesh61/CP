@@ -3,18 +3,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int lastStoneWeight(vector<int>& stones) {
-        
-        priority_queue<int> pq(stones.begin(),stones.end());
+    int lastStoneWeight(vector<int> &stones)
+    {
 
-        while(!pq.empty())
+        priority_queue<int> pq(stones.begin(), stones.end());
+
+        while (!pq.empty())
         {
             int x = pq.top();
             pq.pop();
 
-            if(pq.empty())
+            if (pq.empty())
             {
                 return x;
             }
@@ -22,14 +24,13 @@ public:
             int y = pq.top();
             pq.pop();
 
-             if(y <= x)
+            if (y <= x)
             {
-                if(y != x)
+                if (y != x)
                 {
-                    pq.push(x-y);
+                    pq.push(x - y);
                 }
             }
-
         }
 
         return 0;

@@ -3,24 +3,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class SmallestInfiniteSet {
+class SmallestInfiniteSet
+{
 public:
-
     set<int> st;
-    SmallestInfiniteSet() {
-        for(int i = 1 ;i <= 1000 ; i++)
+    SmallestInfiniteSet()
+    {
+        for (int i = 1; i <= 1000; i++)
         {
             st.insert(i);
         }
     }
-    
-    int popSmallest() {
+
+    int popSmallest()
+    {
         int pop_element = *st.begin();
         st.erase(*(st.begin()));
         return pop_element;
     }
-    
-    void addBack(int num) {
+
+    void addBack(int num)
+    {
         st.insert(num);
     }
 };

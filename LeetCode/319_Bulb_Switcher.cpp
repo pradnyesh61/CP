@@ -3,10 +3,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
     // int bulbSwitch(int n) {
-        
+
     //     if(n == 0 || n == 1)
     //     {
     //         return n;
@@ -27,7 +28,6 @@ public:
 
     //     int count = 0;
 
-
     //     for(int i = 0;  i < n ; i++)
     //     {
     //         if(v[i] == 1)
@@ -39,9 +39,9 @@ public:
     //     return count;
     // }
 
-      int bulbSwitch(int n) {
+    int bulbSwitch(int n)
+    {
 
-        return sqrt(n);  
-      
+        return sqrt(n);
     }
 };

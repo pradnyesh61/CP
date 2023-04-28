@@ -3,22 +3,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-
-    void dfs(int i, vector<vector<int>> &adj,vector<vector<int>> &ans,
-                vector<int> &temp, int end)
+    void dfs(int i, vector<vector<int>> &adj, vector<vector<int>> &ans,vector<int> &temp, int end)
     {
-        if(i == end)
+        if (i == end)
         {
             ans.push_back(temp);
-            return ;
+            return;
         }
 
-        for(int j = 0 ; j < adj[i].size();j++)
+        for (int j = 0; j < adj[i].size(); j++)
         {
             temp.push_back(adj[i][j]);
-            dfs(adj[i][j],adj,ans,temp,end);
+            dfs(adj[i][j], adj, ans, temp, end);
             temp.pop_back();
         }
     }
@@ -46,7 +45,7 @@ public:
     //     path.push_back(0);
 
     //     queue<pair<int,vector<int>>> q;
-        
+
     //     q.push({0,path});
 
     //     while(!q.empty())
@@ -73,9 +72,10 @@ public:
 
     // }
 
-     vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& adj) {
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>> &adj)
+    {
 
-        int end = adj.size()-1;
+        int end = adj.size() - 1;
 
         vector<vector<int>> ans;
         vector<int> path;
@@ -84,18 +84,17 @@ public:
         queue<vector<int>> q;
         q.push(path);
 
-        while(!q.empty())
+        while (!q.empty())
         {
             path = q.front();
             q.pop();
 
             int node = path.back();
 
-            if(node == end)
+            if (node == end)
             {
                 ans.push_back(path);
             }
-
 
             // for(int j = 0 ;j < adj[node].size() ; j++)
             // {
@@ -104,18 +103,15 @@ public:
             //     path.pop_back();
             // }
 
-            for(auto it : adj[node])
+            for (auto it : adj[node])
             {
                 // rather poping node back we are using new vector each time
                 vector<int> v(path);
                 v.push_back(it);
                 q.push(v);
             }
-
-
         }
 
         return ans;
-
     }
 };

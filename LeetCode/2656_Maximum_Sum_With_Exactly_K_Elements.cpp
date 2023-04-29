@@ -3,15 +3,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    int maximizeSum(vector<int>& nums, int k) {
+    int maximizeSum(vector<int> &nums, int k)
+    {
         int sum = 0;
 
-        int m = *max_element(nums.begin(),nums.end());
+        int m = *max_element(nums.begin(), nums.end());
 
-        while(k--)
+        while (k--)
         {
             sum += m;
             m++;

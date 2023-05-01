@@ -3,10 +3,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    double average(vector<int>& salary) {
-        
+    double average(vector<int> &salary)
+    {
+
         int minS = INT_MAX;
         int maxS = INT_MIN;
 
@@ -14,14 +16,14 @@ public:
 
         int l = salary.size();
 
-        for(int i = 0; i  < l; i++)
+        for (int i = 0; i < l; i++)
         {
-            if(salary[i] < minS)
+            if (salary[i] < minS)
             {
                 minS = salary[i];
             }
-            
-            if(salary[i] > maxS)
+
+            if (salary[i] > maxS)
             {
                 maxS = salary[i];
             }
@@ -29,9 +31,8 @@ public:
             sum += salary[i];
         }
 
+        sum -= (minS + maxS);
 
-        sum -= (minS+maxS);
-
-        return (double) sum/(l-2);
+        return (double)sum / (l - 2);
     }
 };

@@ -3,14 +3,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-
-class Solution {
+class Solution
+{
 public:
-
     bool isVowel(char c)
     {
-        if(c == 'a' || c == 'e'|| c == 'i' || c == 'o' || c == 'u')
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
             return true;
         return false;
     }
@@ -34,27 +32,26 @@ public:
     //     int notMatch = INT_MIN;
 
     //     notMatch = vowels(i-1,s,"");
-       
+
     //     if(isVowel(s[i]))
     //     {
     //         ans += s[i];
-            
+
     //         cout<<ans<<endl;
     //         match = vowels(i-1,s,ans);
     //     }else{
     //         match = ans.size();
     //     }
 
-        
     //     return max(match,notMatch);
     // }
 
     int countVowel(string s)
     {
         int count = 0;
-        for(int i = 0; i < s.size();i++)
+        for (int i = 0; i < s.size(); i++)
         {
-            if(isVowel(s[i]))
+            if (isVowel(s[i]))
             {
                 count++;
             }
@@ -93,53 +90,51 @@ public:
 
     //     return max(match ,notMatch);
 
+    // }
 
-    // } 
-
-      int vowels(int i, string s, int k, string ans ,int count1)
+    int vowels(int i, string s, int k, string ans, int count1)
     {
-       
-        if(k == 0)
+
+        if (k == 0)
         {
-           // cout<<ans<<" "<<count1<<endl;
-           // int count = countVowel(ans);
+            // cout<<ans<<" "<<count1<<endl;
+            // int count = countVowel(ans);
             return count1;
         }
 
-        if(i == 0)
+        if (i == 0)
         {
-            if(isVowel(s[i]))
+            if (isVowel(s[i]))
             {
                 count1 += 1;
             }
-            //cout<<ans<<" "<<count1<<endl;
-            //int count = countVowel(ans);
+            // cout<<ans<<" "<<count1<<endl;
+            // int count = countVowel(ans);
             return count1;
         }
-
 
         int match = 0;
         int notMatch = 0;
 
-        if(k)
+        if (k)
         {
             ans += s[i];
             int temp = count1;
-            if(isVowel(s[i]))
+            if (isVowel(s[i]))
             {
                 temp += 1;
             }
-            match = vowels( i-1, s, k-1, ans ,temp);
+            match = vowels(i - 1, s, k - 1, ans, temp);
         }
 
-        notMatch = vowels(i-1,s,k,"",0);
+        notMatch = vowels(i - 1, s, k, "", 0);
 
-        return   max(match ,notMatch);
-    } 
+        return max(match, notMatch);
+    }
 
     // int sliding(string s,int k)
     // {
-       
+
     //     int maxi = 0;
     //     for(int i = 0; i < s.length();i++)
     //     {
@@ -164,64 +159,58 @@ public:
     //     return maxi;
     // }
 
-     int sliding(string s,int k)
+    int sliding(string s, int k)
     {
-       
+
         int maxi = 0;
         int count = 0;
-        int i =0;
+        int i = 0;
         string ans = "";
-        for(i = 0; i < k && i < s.length() ; i++)
+        for (i = 0; i < k && i < s.length(); i++)
         {
             ans += s[i];
-            if(isVowel(s[i]))
+            if (isVowel(s[i]))
             {
                 count++;
             }
         }
 
-        if(maxi < count)
+        if (maxi < count)
         {
             maxi = count;
         }
 
         int j = 0;
 
-
-        for( ; i < s.length();i++)
+        for (; i < s.length(); i++)
         {
             ans += s[i];
-            if(isVowel(ans[0]))
+            if (isVowel(ans[0]))
             {
                 count--;
             }
             ans.erase(0, 1);
 
-           
-            if(isVowel(s[i]))
+            if (isVowel(s[i]))
             {
                 count++;
             }
 
-            if(maxi < count)
+            if (maxi < count)
             {
                 maxi = count;
             }
 
-           // cout<<ans<<" "<<count<<endl;
-
+            // cout<<ans<<" "<<count<<endl;
         }
 
         return maxi;
     }
 
-   
+    int maxVowels(string s, int k)
+    {
 
-
-    int maxVowels(string s, int k) {
-        
-        return sliding(s,k);
-        //return vowels(s.size()-1,s,k,"",0);
-        
+        return sliding(s, k);
+        // return vowels(s.size()-1,s,k,"",0);
     }
 };

@@ -3,18 +3,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-
-    void dfs(int i, vector<int> adj[],int n,vector<int> &vis)
+    void dfs(int i, vector<int> adj[], int n, vector<int> &vis)
     {
         vis[i] = 1;
 
-        for(auto it : adj[i])
+        for (auto it : adj[i])
         {
-            if(vis[it] == 0)
+            if (vis[it] == 0)
             {
-                dfs(it,adj,n,vis);
+                dfs(it, adj, n, vis);
             }
         }
 
@@ -29,8 +29,6 @@ public:
     //     {
     //         adj[edges[i][0]].push_back(edges[i][1]);
     //     }
-
-      
 
     //     vector<int> temp;
 
@@ -71,20 +69,21 @@ public:
     //     return temp;
     // }
 
-     vector<int> findSmallestSetOfVertices(int n, vector<vector<int>>& edges) {
+    vector<int> findSmallestSetOfVertices(int n, vector<vector<int>> &edges)
+    {
 
         vector<int> adj[n];
 
-        for(int i = 0; i< edges.size(); i++)
+        for (int i = 0; i < edges.size(); i++)
         {
             adj[edges[i][0]].push_back(edges[i][1]);
         }
 
-        vector<int> inbound(n,0);
+        vector<int> inbound(n, 0);
 
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
         {
-            for(auto it : adj[i])
+            for (auto it : adj[i])
             {
                 inbound[it]++;
             }
@@ -92,14 +91,13 @@ public:
 
         vector<int> ans;
 
-        for(int i = 0; i<n ;i++)
+        for (int i = 0; i < n; i++)
         {
-            if(inbound[i] == 0)
-            ans.push_back(i);
-            cout<<inbound[i]<<" ";
+            if (inbound[i] == 0)
+                ans.push_back(i);
+            cout << inbound[i] << " ";
         }
 
         return ans;
-
-     }
+    }
 };

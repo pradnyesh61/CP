@@ -3,12 +3,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
     // int diagonalSum(vector<vector<int>>& mat) {
-        
+
     //     int sum = 0;
-        
+
     //     int i =0;
     //     int j = mat.size()-1;
 
@@ -27,21 +28,22 @@ public:
     //     return sum;
     // }
 
-     int diagonalSum(vector<vector<int>>& mat) {
-        
-        int sum = 0;
-        int n = mat.size()-1;
+    int diagonalSum(vector<vector<int>> &mat)
+    {
 
-        for(int i = 0; i <= n ; i++)
+        int sum = 0;
+        int n = mat.size() - 1;
+
+        for (int i = 0; i <= n; i++)
         {
-            if(i == n-i)
+            if (i == n - i)
             {
                 sum += mat[i][i];
             }
-            else{
-                sum += mat[i][i] + mat[i][n-i];
+            else
+            {
+                sum += mat[i][i] + mat[i][n - i];
             }
-          
         }
         return sum;
     }

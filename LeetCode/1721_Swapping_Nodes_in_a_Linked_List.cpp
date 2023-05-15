@@ -31,7 +31,8 @@ int j = 0;
         {
             start = head;
         }
-      swapNodes1(head->next,k,++i);
+        
+        swapNodes1(head->next,k,++i);
 
         j++;
         

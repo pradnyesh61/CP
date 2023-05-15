@@ -13,30 +13,32 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 
 private:
-ListNode* start = NULL;
-ListNode* end = NULL;
+    ListNode *start = NULL;
+    ListNode *end = NULL;
 
-int j = 0;
-    
-    void swapNodes1(ListNode* head, int k, int i) {
-        if(head == NULL)
+    int j = 0;
+
+    void swapNodes1(ListNode *head, int k, int i)
+    {
+        if (head == NULL)
         {
             return;
         }
-      
-        if(k == i)
+
+        if (k == i)
         {
             start = head;
         }
-        
-        swapNodes1(head->next,k,++i);
+
+        swapNodes1(head->next, k, ++i);
 
         j++;
-        
-        if(k == j)
+
+        if (k == j)
         {
             end = head;
         }
@@ -45,13 +47,14 @@ int j = 0;
     }
 
 public:
-    ListNode* swapNodes(ListNode* head, int k) {
-        swapNodes1(head,k,1);
-    
+    ListNode *swapNodes(ListNode *head, int k)
+    {
+        swapNodes1(head, k, 1);
+
         int temp = start->val;
         start->val = end->val;
         end->val = temp;
-       
+
         return head;
     }
 };

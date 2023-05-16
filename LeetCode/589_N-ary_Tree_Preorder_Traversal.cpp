@@ -3,7 +3,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 /*
 // Definition for a Node.
 class Node {
@@ -24,31 +23,31 @@ public:
 };
 */
 
-class Solution {
+class Solution
+{
 
 private:
     vector<int> ans;
 
 public:
-
-    void preorde(Node* root)
+    void preorde(Node *root)
     {
-        if(root == NULL)
+        if (root == NULL)
         {
-            return ;
+            return;
         }
 
         ans.push_back(root->val);
-        
-        for(int i = 0; i < root->children.size() ; i++)
+
+        for (int i = 0; i < root->children.size(); i++)
         {
-            //cout<<root->children[i]<<endl;
+            // cout<<root->children[i]<<endl;
             preorde(root->children[i]);
         }
-       
     }
 
-    vector<int> preorder(Node* root) {
+    vector<int> preorder(Node *root)
+    {
         preorde(root);
         return ans;
     }

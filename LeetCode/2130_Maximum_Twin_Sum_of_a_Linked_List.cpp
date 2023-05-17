@@ -13,16 +13,17 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 
 private:
-vector<int> nums;
+    vector<int> nums;
 
 public:
+    int pairSum(ListNode *head)
+    {
 
-    int pairSum(ListNode* head) {
-
-        while(head != NULL)
+        while (head != NULL)
         {
             nums.push_back(head->val);
             head = head->next;
@@ -30,15 +31,14 @@ public:
 
         int maxi = 0;
         int n = nums.size();
-        for(int i = 0 ; i < n/2 ; i++)
+        for (int i = 0; i < n / 2; i++)
         {
-            if(nums[i]+ nums[n-i-1] > maxi)
+            if (nums[i] + nums[n - i - 1] > maxi)
             {
-                maxi = nums[i]+ nums[n-i-1] ;
+                maxi = nums[i] + nums[n - i - 1];
             }
         }
 
         return maxi;
-        
     }
 };

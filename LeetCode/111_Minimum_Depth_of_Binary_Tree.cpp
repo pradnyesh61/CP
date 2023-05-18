@@ -13,55 +13,52 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 
 private:
-int count = 1;
+    int count = 1;
 
 public:
-    int minDepth(TreeNode* root) {
-        
-        if(root == NULL)
+    int minDepth(TreeNode *root)
+    {
+
+        if (root == NULL)
         {
             return 0;
         }
 
-        queue<TreeNode*> q;
+        queue<TreeNode *> q;
         q.push(root);
         q.push(NULL);
 
-        while(!q.empty())
+        while (!q.empty())
         {
-            TreeNode* node = q.front();
+            TreeNode *node = q.front();
             q.pop();
 
-            if(node == NULL)
+            if (node == NULL)
             {
                 count++;
                 q.push(NULL);
                 continue;
             }
-            else if(node->left == NULL && node->right == NULL)
+            else if (node->left == NULL && node->right == NULL)
             {
                 return count;
             }
 
-            if(node->left != NULL)
+            if (node->left != NULL)
             {
                 q.push(node->left);
             }
-            
-            if(node->right != NULL)
+
+            if (node->right != NULL)
             {
                 q.push(node->right);
             }
-
-            
-            
         }
 
         return count;
-
-
     }
 };

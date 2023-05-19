@@ -34,7 +34,6 @@ public:
 
     bool isUnivalTree(TreeNode *root)
     {
-
         return inorder(root, root->val);
     }
 };

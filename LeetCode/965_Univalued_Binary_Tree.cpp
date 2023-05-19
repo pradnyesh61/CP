@@ -14,27 +14,27 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-
-    bool inorder(TreeNode* root,int n)
+    bool inorder(TreeNode *root, int n)
     {
-        if(root == NULL)
+        if (root == NULL)
         {
             return true;
         }
 
-        if(root->val != n)
+        if (root->val != n)
         {
             return false;
         }
 
-        return inorder(root->left,n) && inorder(root->right,n);
+        return inorder(root->left, n) && inorder(root->right, n);
     }
 
-    bool isUnivalTree(TreeNode* root) {
-        
-        return inorder(root,root->val);
-        
+    bool isUnivalTree(TreeNode *root)
+    {
+
+        return inorder(root, root->val);
     }
 };

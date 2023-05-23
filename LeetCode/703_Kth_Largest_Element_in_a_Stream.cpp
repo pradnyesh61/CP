@@ -3,29 +3,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class KthLargest {
+class KthLargest
+{
 
 private:
     vector<int> v;
     int t;
-    priority_queue<int,vector<int>,greater<int>> pq;
+    priority_queue<int, vector<int>, greater<int>> pq;
 
 public:
-    KthLargest(int k, vector<int>& nums) {
-        for(auto it : nums)
-        pq.push(it);
+    KthLargest(int k, vector<int> &nums)
+    {
+        for (auto it : nums)
+            pq.push(it);
 
         t = k;
     }
-    
-    int add(int val) {
+
+    int add(int val)
+    {
         pq.push(val);
-        while(pq.size()>t)
+        while (pq.size() > t)
         {
             pq.pop();
         }
-        return pq.top();      
+        return pq.top();
     }
 };
 

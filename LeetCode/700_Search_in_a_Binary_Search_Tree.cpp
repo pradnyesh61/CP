@@ -3,7 +3,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -15,28 +14,28 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    
-    TreeNode* st = NULL;
-    
-    TreeNode* searchBST(TreeNode* root, int val) {
-        
-        if(root == NULL)
+    TreeNode *st = NULL;
+
+    TreeNode *searchBST(TreeNode *root, int val)
+    {
+
+        if (root == NULL)
         {
             return NULL;
         }
-        
-        if(root->val == val)
+
+        if (root->val == val)
         {
             st = root;
             return root;
         }
-        
-        searchBST(root->left,val);
-        searchBST(root->right,val);
-        
+
+        searchBST(root->left, val);
+        searchBST(root->right, val);
+
         return st;
-        
     }
 };

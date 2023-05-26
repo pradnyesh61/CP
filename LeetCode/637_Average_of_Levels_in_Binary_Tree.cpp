@@ -14,46 +14,47 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 
 private:
-vector<double> ans;
+    vector<double> ans;
 
 public:
-    vector<double> averageOfLevels(TreeNode* root) {
-       if(root == NULL)
-       {
-           return ans;
-       } 
+    vector<double> averageOfLevels(TreeNode *root)
+    {
+        if (root == NULL)
+        {
+            return ans;
+        }
 
-       queue<TreeNode*> q;
-       q.push(root);
+        queue<TreeNode *> q;
+        q.push(root);
 
-       while(!q.empty())
-       {
-           int k = q.size();
-           double sum = 0;
+        while (!q.empty())
+        {
+            int k = q.size();
+            double sum = 0;
 
-           for(int i = 0 ; i < k ; i++)
-           {
-                TreeNode* temp = q.front();
-               q.pop();
+            for (int i = 0; i < k; i++)
+            {
+                TreeNode *temp = q.front();
+                q.pop();
 
-               sum += temp->val;
+                sum += temp->val;
 
-               if(temp->left != NULL)
-               {
-                   q.push(temp->left);
-               }
-               if(temp->right != NULL)
-               {
-                   q.push(temp->right);
-               }
-           }
-           ans.push_back((sum/k));
-       }
+                if (temp->left != NULL)
+                {
+                    q.push(temp->left);
+                }
+                if (temp->right != NULL)
+                {
+                    q.push(temp->right);
+                }
+            }
+            ans.push_back((sum / k));
+        }
 
-       return ans;
-
+        return ans;
     }
 };

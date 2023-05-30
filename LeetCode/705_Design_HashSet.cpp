@@ -3,28 +3,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class MyHashSet {
+class MyHashSet
+{
 
 private:
-vector<int> v;
+    vector<int> v;
 
 public:
-
-    MyHashSet() {
-        v.resize(1000001,-1);
+    MyHashSet()
+    {
+        v.resize(1000001, -1);
     }
-    
-    void add(int key) {
+
+    void add(int key)
+    {
         v[key] = 1;
     }
-    
-    void remove(int key) {
+
+    void remove(int key)
+    {
         v[key] = -1;
     }
-    
-    bool contains(int key) {
-        if(v[key] >= 0)
+
+    bool contains(int key)
+    {
+        if (v[key] >= 0)
         {
             return true;
         }

@@ -3,17 +3,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    int findNonMinOrMax(vector<int>& nums) {
-        
-        if(nums.size()<= 2)
+    int findNonMinOrMax(vector<int> &nums)
+    {
+
+        if (nums.size() <= 2)
         {
             return -1;
         }
 
-        sort(nums.begin(),nums.end());
+        sort(nums.begin(), nums.end());
         return nums[1];
     }
 };

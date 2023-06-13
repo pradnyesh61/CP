@@ -3,42 +3,43 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int equalPairs(vector<vector<int>>& grid) {
-        
+    int equalPairs(vector<vector<int>> &grid)
+    {
+
         int row = 0;
         int col = 0;
 
         int count = 0;
         int n = grid.size();
 
-        for(int i = 0 ; i<n ; i++)
+        for (int i = 0; i < n; i++)
         {
-            for(int j = 0 ; j< n ; j++)
+            for (int j = 0; j < n; j++)
             {
                 bool flag = true;
-               
-               for(int  k = 0 ; k < n ; k++)
-               {
-                //cout<<grid[i][k]<<" != "<<grid[k][j]<<endl;
-                   if(grid[i][k] != grid[k][j])
-                   {
+
+                for (int k = 0; k < n; k++)
+                {
+                    // cout<<grid[i][k]<<" != "<<grid[k][j]<<endl;
+                    if (grid[i][k] != grid[k][j])
+                    {
                         flag = false;
                         break;
-                   }
-               }
-              // cout<<endl;
-               if(flag)
+                    }
+                }
+                // cout<<endl;
+                if (flag)
                 {
-                  //  cout<<"Hi"<<endl;
+                    //  cout<<"Hi"<<endl;
                     count++;
                 }
             }
-           // cout<<endl;
+            // cout<<endl;
         }
 
         return count;
-
     }
 };

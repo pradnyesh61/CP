@@ -14,14 +14,14 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 
 private:
-int mini = INT_MAX;
-TreeNode* prevNode = NULL;
-//vector<int> v;
+    int mini = INT_MAX;
+    TreeNode *prevNode = NULL;
+    // vector<int> v;
 public:
-
     // void Inorder(TreeNode* root)
     // {
     //     if(root == NULL)
@@ -37,7 +37,7 @@ public:
 
     // int getMinimumDifference(TreeNode* root) {
     //     Inorder(root);
-        
+
     //     int mini = INT_MAX;
 
     //     for(int i = 1 ; i < v.size() ; i++){
@@ -52,28 +52,26 @@ public:
 
     // }
 
-     void Inorder(TreeNode* root)
+    void Inorder(TreeNode *root)
     {
-        if(root == NULL)
+        if (root == NULL)
         {
-            return ;
+            return;
         }
 
         Inorder(root->left);
 
-        if(prevNode != NULL)
+        if (prevNode != NULL)
         {
-            mini = min(mini,root->val-prevNode->val);
+            mini = min(mini, root->val - prevNode->val);
         }
         prevNode = root;
         Inorder(root->right);
-
     }
-    
-    int getMinimumDifference(TreeNode* root) {
+
+    int getMinimumDifference(TreeNode *root)
+    {
         Inorder(root);
         return mini;
-        
-
     }
 };

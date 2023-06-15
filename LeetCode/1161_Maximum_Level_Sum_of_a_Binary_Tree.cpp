@@ -14,40 +14,42 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    int maxLevelSum(TreeNode* root) {
-       
+    int maxLevelSum(TreeNode *root)
+    {
+
         int maxi = root->val;
         int level = 1;
         int lcount = 0;
 
-        queue<TreeNode*> q;
+        queue<TreeNode *> q;
         q.push(root);
 
-        while(!q.empty())
+        while (!q.empty())
         {
             int sz = q.size();
             int sum = 0;
-            while(sz--)
+            while (sz--)
             {
-                TreeNode* temp = q.front();
+                TreeNode *temp = q.front();
                 q.pop();
 
                 sum += temp->val;
 
-                if(temp->left != NULL)
+                if (temp->left != NULL)
                 {
                     q.push(temp->left);
                 }
 
-                if(temp->right != NULL)
+                if (temp->right != NULL)
                 {
                     q.push(temp->right);
                 }
             }
             lcount++;
-            if(maxi < sum)
+            if (maxi < sum)
             {
                 maxi = sum;
                 level = lcount;

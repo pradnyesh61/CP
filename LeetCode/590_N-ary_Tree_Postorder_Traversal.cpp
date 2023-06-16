@@ -23,46 +23,44 @@ public:
 };
 */
 
-class Solution {
+class Solution
+{
 
-vector<int> v;
+    vector<int> v;
+
 public:
-
-
-    void postorder1(Node* root)
+    void postorder1(Node *root)
     {
-         if(root == NULL)
+        if (root == NULL)
         {
-            return ;
+            return;
         }
 
         int sz = root->children.size();
 
-        if(sz == 0)
+        if (sz == 0)
         {
             v.push_back(root->val);
             return;
         }
 
-        for(int i = 0 ; i < sz ; i++)
-        {   
+        for (int i = 0; i < sz; i++)
+        {
             postorder1(root->children[i]);
         }
         v.push_back(root->val);
-       
     }
 
-    vector<int> postorder(Node* root) {
-      
+    vector<int> postorder(Node *root)
+    {
 
-       if(root == NULL)
-       {
-           return v;
-       }
+        if (root == NULL)
+        {
+            return v;
+        }
 
-       postorder1(root);
+        postorder1(root);
 
-       return v;
-
+        return v;
     }
 };

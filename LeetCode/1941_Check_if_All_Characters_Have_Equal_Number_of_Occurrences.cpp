@@ -3,23 +3,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    bool areOccurrencesEqual(string s) {
-        
-        unordered_map<char,int> m;
+    bool areOccurrencesEqual(string s)
+    {
 
-        for(int i = 0; i< s.length(); i++)
+        unordered_map<char, int> m;
+
+        for (int i = 0; i < s.length(); i++)
         {
             m[s[i]]++;
         }
 
         int k = m[s[0]];
 
-        for(auto it : m)
+        for (auto it : m)
         {
 
-            if(it.second != k)
+            if (it.second != k)
             {
                 return false;
             }

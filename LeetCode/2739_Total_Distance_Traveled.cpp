@@ -3,31 +3,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    int distanceTraveled(int mainTank, int additionalTank) {
-        
+    int distanceTraveled(int mainTank, int additionalTank)
+    {
+
         int km = 0;
 
-        while(mainTank)
+        while (mainTank)
         {
-            if(mainTank >= 5)
+            if (mainTank >= 5)
             {
-                km += (10*5);
+                km += (10 * 5);
                 mainTank -= 5;
-                if(additionalTank){
-                additionalTank--;
-                mainTank++;
+                if (additionalTank)
+                {
+                    additionalTank--;
+                    mainTank++;
                 }
             }
             else
             {
-                km += (mainTank*10);
+                km += (mainTank * 10);
                 break;
             }
 
-           // cout<<additionalTank<<" = "<<mainTank<<" = "<<km<<endl;
+            // cout<<additionalTank<<" = "<<mainTank<<" = "<<km<<endl;
         }
 
         return km;

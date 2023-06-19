@@ -18,7 +18,6 @@ public:
          }
 
          return *max_element(gain.begin(),gain.end());
-
      }
      */
     int largestAltitude(vector<int> &gain)

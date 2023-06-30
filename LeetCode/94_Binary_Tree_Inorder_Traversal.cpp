@@ -14,21 +14,22 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-     vector<int> inorder_nodes;
-    vector<int> inorderTraversal(TreeNode* root) {
-      
-        
-        if(root == NULL)
+    vector<int> inorder_nodes;
+    vector<int> inorderTraversal(TreeNode *root)
+    {
+
+        if (root == NULL)
         {
             return inorder_nodes;
         }
-        
+
         inorderTraversal(root->left);
         inorder_nodes.push_back(root->val);
         inorderTraversal(root->right);
-        
+
         return inorder_nodes;
     }
 };

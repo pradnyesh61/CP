@@ -3,47 +3,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
-public:
-   
-string sortSentence(string s)
+class Solution
 {
-    vector<string> v(10, "");
-
-    int j = 0;
-    string ss = "";
-    for (int i = 0; i < s.length(); i++)
+public:
+    string sortSentence(string s)
     {
-        int a = s[i] - '0';
+        vector<string> v(10, "");
 
-        if (a >= 0 && a <= 9)
+        int j = 0;
+        string ss = "";
+        for (int i = 0; i < s.length(); i++)
         {
-            v[a] = ss;
-            j = i + 2;
-            cout << "ss = " << ss << endl;
-            ss = "";
-        }
-        else if (s[i] == ' ')
-        {
-            continue;
-        }
-        else
-        {
-            ss += s[i];
-        }
-    }
+            int a = s[i] - '0';
 
-    string ans;
-    for (int i = 1; i < 10; i++)
-    {
-        if (v[i].length() > 0)
-        {
-            ans += v[i];
-            ans.push_back(' ');
+            if (a >= 0 && a <= 9)
+            {
+                v[a] = ss;
+                j = i + 2;
+                cout << "ss = " << ss << endl;
+                ss = "";
+            }
+            else if (s[i] == ' ')
+            {
+                continue;
+            }
+            else
+            {
+                ss += s[i];
+            }
         }
+
+        string ans;
+        for (int i = 1; i < 10; i++)
+        {
+            if (v[i].length() > 0)
+            {
+                ans += v[i];
+                ans.push_back(' ');
+            }
+        }
+        ans.pop_back();
+        return ans;
     }
-    ans.pop_back();
-    return ans;
-}
 };

@@ -14,50 +14,50 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        
+    vector<vector<int>> levelOrderBottom(TreeNode *root)
+    {
+
         vector<vector<int>> v;
 
-        if(root == NULL)
+        if (root == NULL)
         {
             return v;
         }
 
-        queue<TreeNode*> q;
+        queue<TreeNode *> q;
         q.push(root);
 
-        while(!q.empty())
+        while (!q.empty())
         {
             int k = q.size();
             vector<int> temp;
 
-            while(k--)
+            while (k--)
             {
-                TreeNode* t = q.front();
+                TreeNode *t = q.front();
                 temp.push_back(t->val);
                 q.pop();
 
-                if(t->left != NULL)
+                if (t->left != NULL)
                 {
                     q.push(t->left);
                 }
-                if(t->right != NULL)
+                if (t->right != NULL)
                 {
                     q.push(t->right);
                 }
             }
-            if(temp.size()>0)
+            if (temp.size() > 0)
             {
                 v.push_back(temp);
             }
         }
 
-        reverse(v.begin(),v.end());
+        reverse(v.begin(), v.end());
 
         return v;
-
-
     }
 };

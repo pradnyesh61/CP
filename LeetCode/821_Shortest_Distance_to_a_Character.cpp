@@ -3,36 +3,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> shortestToChar(string s, char c) {
-        
+    vector<int> shortestToChar(string s, char c)
+    {
+
         vector<int> ind;
         int n = s.length();
 
-        vector<int> ans(n,-1);
+        vector<int> ans(n, -1);
 
-        for(int i = 0; i< n ; i++)
+        for (int i = 0; i < n; i++)
         {
-            if(s[i] == c)
+            if (s[i] == c)
             {
                 ans[i] = 0;
                 ind.push_back(i);
             }
         }
 
-       
-
         int j = 0;
-        int k=0;
-        
-        if(ind.size() == 1)
+        int k = 0;
+
+        if (ind.size() == 1)
         {
-            for(int i = 0; i < n;i++)
+            for (int i = 0; i < n; i++)
             {
-                if(ans[i] == -1)
+                if (ans[i] == -1)
                 {
-                    ans[i] = abs(i-ind[0]);
+                    ans[i] = abs(i - ind[0]);
                 }
             }
             return ans;
@@ -40,16 +40,16 @@ public:
 
         bool check = false;
 
-        for(int i = 0 ; i < n ; i++)
+        for (int i = 0; i < n; i++)
         {
-            if(ans[i] == 0)
+            if (ans[i] == 0)
             {
-               
-                if(j+1 < ind.size())
+
+                if (j + 1 < ind.size())
                 {
                     j++;
                 }
-                if(check)
+                if (check)
                 {
                     k++;
                 }
@@ -57,31 +57,26 @@ public:
                 continue;
             }
 
-            if(i == 0)
+            if (i == 0)
             {
                 ans[i] = ind[0];
             }
 
-            if(i == n-1)
+            if (i == n - 1)
             {
-                ans[i] = ind[ind.size()-1];
+                ans[i] = ind[ind.size() - 1];
             }
 
-            if(abs(i-ind[j]) > abs(i-ind[k]))
+            if (abs(i - ind[j]) > abs(i - ind[k]))
             {
-                ans[i] = abs(i-ind[k]);
-
+                ans[i] = abs(i - ind[k]);
             }
-            else{
-                ans[i] = abs(i-ind[j]);
+            else
+            {
+                ans[i] = abs(i - ind[j]);
             }
-
-           
-
         }
 
         return ans;
     }
-
-   
 };

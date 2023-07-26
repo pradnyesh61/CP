@@ -1,22 +1,20 @@
 // 26 July 2023
 
 #include <bits/stdc++.h>
-using namespace std;class Solution
+using namespace std;
+class Solution
 
 {
 public:
     int orangesRotting(vector<vector<int>> &v)
     {
-        int n,m;
+        int n, m;
         n = v.size();
         m = v[0].size();
-        
-        
 
-        int x = -1 , y = -1;
+        int x = -1, y = -1;
         int zz = 0;
-         queue<pair<int, int>> q;
-    
+        queue<pair<int, int>> q;
 
         for (int i = 0; i < n; i++)
         {
@@ -26,27 +24,26 @@ public:
                 {
                     x = i;
                     y = j;
-                    q.push({i,j});
+                    q.push({i, j});
                 }
-                
-                if(v[i][j] != 0)
+
+                if (v[i][j] != 0)
                 {
                     zz = 1;
                 }
             }
         }
-        
-        if(zz == 0)
+
+        if (zz == 0)
         {
             return 0;
         }
-        
-        if(x == -1 && y == -1 )
+
+        if (x == -1 && y == -1)
         {
             return -1;
         }
 
-       
         q.push({-1, -1});
 
         int count = 0;

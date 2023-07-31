@@ -3,10 +3,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    string toLowerCase(string s) {
+    string toLowerCase(string s)
+    {
         transform(s.begin(), s.end(), s.begin(), ::tolower);
         return s;
     }

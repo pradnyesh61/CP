@@ -13,51 +13,52 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
+    void deletenode(ListNode *prev, ListNode *current, ListNode *next_temp)
+    {
 
-    void deletenode(ListNode* prev, ListNode* current,ListNode* next_temp){
-        
-        if(next_temp == NULL)
+        if (next_temp == NULL)
         {
-            return ;
+            return;
         }
 
-        if(current->val == next_temp->val)
-        { 
-            while(next_temp != NULL && current->val == next_temp->val)
+        if (current->val == next_temp->val)
+        {
+            while (next_temp != NULL && current->val == next_temp->val)
             {
                 next_temp = next_temp->next;
             }
             prev->next = next_temp;
-            if(next_temp == NULL || next_temp->next == NULL)
+            if (next_temp == NULL || next_temp->next == NULL)
             {
                 return;
             }
-            deletenode(prev,next_temp,next_temp->next);
+            deletenode(prev, next_temp, next_temp->next);
         }
-        else{
-            deletenode(current,next_temp,next_temp->next);
-        }
-
-    }
-
-  /*  bool headcheck(ListNode* head)
-    {
-         while(head->next !=NULL && head->val == head->next->val)
+        else
         {
-            check = true;
-            head = head->next;
+            deletenode(current, next_temp, next_temp->next);
         }
     }
 
-    */
+    /*  bool headcheck(ListNode* head)
+      {
+           while(head->next !=NULL && head->val == head->next->val)
+          {
+              check = true;
+              head = head->next;
+          }
+      }
+
+      */
 
     vector<int> v;
 
-    void traver(ListNode* head)
+    void traver(ListNode *head)
     {
-        if(head == NULL)
+        if (head == NULL)
         {
             return;
         }
@@ -66,71 +67,70 @@ public:
         traver(head->next);
     }
 
-    ListNode* deleteDuplicates(ListNode* head) {
+    ListNode *deleteDuplicates(ListNode *head)
+    {
 
-        if(head == NULL)
+        if (head == NULL)
         {
             return head;
         }
 
-        int i = 0; int j =1;
+        int i = 0;
+        int j = 1;
 
         traver(head);
 
-        if(v.size()==1)
+        if (v.size() == 1)
         {
             return head;
         }
 
         vector<int> ans;
 
-        while(i < v.size() && j < v.size())
+        while (i < v.size() && j < v.size())
         {
-            if(v[i] != v[j])
+            if (v[i] != v[j])
             {
                 ans.push_back(v[i]);
                 i++;
                 j++;
             }
-            else{
-                while(j < v.size() && (v[i] == v[j]) )
+            else
+            {
+                while (j < v.size() && (v[i] == v[j]))
                 {
                     j++;
                 }
                 i = j;
                 j++;
-               
             }
-         
         }
-    
-       if(j <= v.size() && j-1 >= 0 && j-2 >= 0 && v[j-2] != v[j-1])
+
+        if (j <= v.size() && j - 1 >= 0 && j - 2 >= 0 && v[j - 2] != v[j - 1])
         {
-            ans.push_back(v[j-1]);
+            ans.push_back(v[j - 1]);
         }
 
-        ListNode* temp2 = head;
+        ListNode *temp2 = head;
 
-        
-        if(ans.size() == 0)
+        if (ans.size() == 0)
         {
             return NULL;
         }
 
-       for(int i = 0; i < ans.size() ; i++)
+        for (int i = 0; i < ans.size(); i++)
         {
             temp2->val = ans[i];
-            if(i+1 == ans.size())
+            if (i + 1 == ans.size())
             {
-                temp2->next= NULL;
+                temp2->next = NULL;
                 break;
             }
             temp2 = temp2->next;
         }
-        
+
         temp2 = NULL;
 
         return head;
-        
     }
 };

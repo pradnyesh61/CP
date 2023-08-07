@@ -3,66 +3,67 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-
-class Solution {
+class Solution
+{
 public:
-    bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        
+    bool searchMatrix(vector<vector<int>> &matrix, int target)
+    {
+
         int i = 0;
         int j = 0;
 
-        int m = matrix.size()-1;
-        int n = matrix[0].size()-1;
+        int m = matrix.size() - 1;
+        int n = matrix[0].size() - 1;
 
         int fixm = m;
         int fixn = n;
-      
-        while(i <= m)
-        {
-           // cout<<i<<" = "<<m<<endl;
-            int ver = (i+m)/2;
 
-            //cout<<matrix[ver][0]<<" = "<<target <<" = "<<matrix[ver][fixn]<<endl;
-            
-            if(matrix[ver][0] == target || matrix[ver][fixn] == target)
+        while (i <= m)
+        {
+            // cout<<i<<" = "<<m<<endl;
+            int ver = (i + m) / 2;
+
+            // cout<<matrix[ver][0]<<" = "<<target <<" = "<<matrix[ver][fixn]<<endl;
+
+            if (matrix[ver][0] == target || matrix[ver][fixn] == target)
             {
                 return true;
             }
 
-            if(matrix[ver][0] > target)
+            if (matrix[ver][0] > target)
             {
-                m = ver-1;
+                m = ver - 1;
             }
-            else if(matrix[ver][fixn] < target)
+            else if (matrix[ver][fixn] < target)
             {
-                i = ver+1;
+                i = ver + 1;
             }
-            else{
-              //  cout<<endl;
-                while(j <= n)
-                {   
-                    int hor = (j+n)/2;
-            
-               //     cout<<matrix[ver][hor]<<" = "<<target<<endl;
-          
-                    if(matrix[ver][hor] == target)
+            else
+            {
+                //  cout<<endl;
+                while (j <= n)
+                {
+                    int hor = (j + n) / 2;
+
+                    //     cout<<matrix[ver][hor]<<" = "<<target<<endl;
+
+                    if (matrix[ver][hor] == target)
                     {
                         return true;
                     }
 
-                    if(matrix[ver][hor] > target)
+                    if (matrix[ver][hor] > target)
                     {
-                        n = hor-1;
+                        n = hor - 1;
                     }
-                    else if(matrix[ver][hor] < target)
+                    else if (matrix[ver][hor] < target)
                     {
-                        j = hor+1;
+                        j = hor + 1;
                     }
                 }
                 break;
             }
-          //  cout<<i<<" = "<<m<<endl;
+            //  cout<<i<<" = "<<m<<endl;
         }
 
         return false;

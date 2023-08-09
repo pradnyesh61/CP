@@ -3,24 +3,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> sortArrayByParity(vector<int>& nums) {
+    vector<int> sortArrayByParity(vector<int> &nums)
+    {
         vector<int> even;
         vector<int> odd;
 
-        for(int i  =0; i < nums.size();i++)
+        for (int i = 0; i < nums.size(); i++)
         {
-            if(nums[i]%2 == 0)
+            if (nums[i] % 2 == 0)
             {
                 even.push_back(nums[i]);
-            }else{
+            }
+            else
+            {
                 odd.push_back(nums[i]);
             }
-
         }
 
-        for(auto i : odd)
+        for (auto i : odd)
         {
             even.push_back(i);
         }

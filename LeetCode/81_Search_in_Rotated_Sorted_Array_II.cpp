@@ -3,15 +3,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    bool search(vector<int>& nums, int target) {
-         
-         int n = nums.size();
-        for(int i = 0; i < n ; i++)
+    bool search(vector<int> &nums, int target)
+    {
+
+        int n = nums.size();
+        for (int i = 0; i < n; i++)
         {
-            if(nums[i] == target)
+            if (nums[i] == target)
                 return true;
         }
 

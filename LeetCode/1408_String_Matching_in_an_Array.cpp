@@ -47,6 +47,21 @@ public:
             }
         }
 
-        return vector(s.begin(),s.end());
+        vector<string> ans(s.begin(),s.end());
+
+        return ans;
     }
 };
+
+int main()
+    {
+        Solution obj;
+        vector<string>  words = {"mass","as","hero","superhero"};
+        vector<string> s = obj.stringMatching(words);
+
+        for(auto i : s)
+        {
+            cout<<i<<" ";
+        }
+        cout<<endl;
+    }

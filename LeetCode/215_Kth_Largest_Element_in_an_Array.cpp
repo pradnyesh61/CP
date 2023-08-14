@@ -2,19 +2,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int findKthLargest(vector<int>& nums, int k) {
-        
-        priority_queue<int> pq(nums.begin(),nums.end());
+    int findKthLargest(vector<int> &nums, int k)
+    {
 
-        while(--k && (!pq.empty()))
+        priority_queue<int> pq(nums.begin(), nums.end());
+
+        while (--k && (!pq.empty()))
         {
             pq.pop();
-            
         }
 
-        if(!pq.empty())
+        if (!pq.empty())
         {
             return pq.top();
         }

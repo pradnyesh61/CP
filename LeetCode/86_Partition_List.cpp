@@ -13,23 +13,23 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
+    ListNode *partition(ListNode *head, int x)
+    {
 
+        vector<int> small, great;
 
-    ListNode* partition(ListNode* head, int x) {
+        ListNode *temp = head;
 
-        vector<int> small,great;
-
-        ListNode* temp = head;
-
-        while(temp != NULL)
+        while (temp != NULL)
         {
-            if(temp->val < x)
-            small.push_back(temp->val);
+            if (temp->val < x)
+                small.push_back(temp->val);
             else
-            great.push_back(temp->val);
-            
+                great.push_back(temp->val);
+
             temp = temp->next;
         }
 
@@ -37,18 +37,17 @@ public:
 
         int i = 0;
 
-       for(auto it: small)
-       {
-           temp->val = it;
-           temp = temp->next;
-       }
+        for (auto it : small)
+        {
+            temp->val = it;
+            temp = temp->next;
+        }
 
-       
-       for(auto it: great)
-       {
-           temp->val = it;
-           temp = temp->next;
-       }
+        for (auto it : great)
+        {
+            temp->val = it;
+            temp = temp->next;
+        }
 
         return head;
     }

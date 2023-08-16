@@ -13,35 +13,34 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-
-
-    ListNode* sortList(ListNode* head) {
+    ListNode *sortList(ListNode *head)
+    {
 
         vector<int> v;
 
-        ListNode* temp = head;
+        ListNode *temp = head;
 
-        while(temp != NULL)
+        while (temp != NULL)
         {
             v.push_back(temp->val);
             temp = temp->next;
         }
 
-        sort(v.begin(),v.end());
+        sort(v.begin(), v.end());
 
         int i = 0;
 
-        temp =  head;
+        temp = head;
 
-        while(temp != NULL)
+        while (temp != NULL)
         {
-           temp->val = v[i++];
+            temp->val = v[i++];
             temp = temp->next;
         }
 
         return head;
-        
     }
 };

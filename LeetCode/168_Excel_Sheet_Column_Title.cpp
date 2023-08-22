@@ -3,20 +3,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    string convertToTitle(int n) {
-        
-        
-         string output;
-        while(n > 0){
+    string convertToTitle(int n)
+    {
+
+        string output;
+        while (n > 0)
+        {
             n--;
             int m = n % 26;
             n /= 26;
             output += 'A' + m;
         }
-        reverse(output.begin(),output.end());
-        return output;   
-        
+        reverse(output.begin(), output.end());
+        return output;
     }
 };

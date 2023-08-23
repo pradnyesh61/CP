@@ -3,53 +3,52 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int countLargestGroup(int n) {
-        
-        int maxi = 0;
-        map<int,int> m;
+    int countLargestGroup(int n)
+    {
 
-        while(n)
+        int maxi = 0;
+        map<int, int> m;
+
+        while (n)
         {
             int a = n;
             n--;
             int sum = 0;
-            while(a)
+            while (a)
             {
-                int rem = a%10;
+                int rem = a % 10;
                 sum += rem;
                 a /= 10;
             }
 
-            m[sum]++; 
-            
+            m[sum]++;
         }
 
-                
-int i = 0;
+        int i = 0;
 
-         for(auto it: m)
+        for (auto it : m)
         {
-           if(i < it.second){
-               i = it.second;
-           }
-
+            if (i < it.second)
+            {
+                i = it.second;
+            }
         }
 
-        for(auto it: m)
+        for (auto it : m)
         {
-           
-            if(i == 0)
+
+            if (i == 0)
             {
                 i = it.second;
             }
 
-            if(i == it.second)
+            if (i == it.second)
             {
                 maxi++;
             }
-
         }
 
         return maxi;

@@ -3,30 +3,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int kItemsWithMaximumSum(int numOnes, int numZeros, int numNegOnes, int k) {
-        
+    int kItemsWithMaximumSum(int numOnes, int numZeros, int numNegOnes, int k)
+    {
+
         int maxi = 0;
 
-        while(k)
+        while (k)
         {
 
-            while(numOnes-- && k)
+            while (numOnes-- && k)
             {
                 k--;
                 maxi += 1;
             }
 
-
-            while(numZeros && k)
+            while (numZeros && k)
             {
                 k--;
                 maxi += 0;
                 numZeros--;
             }
 
-            while(numNegOnes && k)
+            while (numNegOnes && k)
             {
                 k--;
                 numNegOnes--;

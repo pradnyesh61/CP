@@ -3,25 +3,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    int thirdMax(vector<int>& nums) {
-        
-        set<int> s(nums.begin(),nums.end());
+    int thirdMax(vector<int> &nums)
+    {
 
-        priority_queue<int> pq(s.begin(),s.end());
+        set<int> s(nums.begin(), nums.end());
+
+        priority_queue<int> pq(s.begin(), s.end());
 
         int ans = 0;
 
         int max = pq.top();
         int a = 0;
 
-        while(!pq.empty())
+        while (!pq.empty())
         {
             ans = pq.top();
             a++;
-            if(a == 3)
+            if (a == 3)
             {
                 return ans;
             }

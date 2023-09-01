@@ -13,41 +13,44 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
+    ListNode *oddEvenList(ListNode *head)
+    {
 
-
-    ListNode* oddEvenList(ListNode* head) {
-
-        if(head == NULL)
+        if (head == NULL)
         {
             return head;
         }
 
-        ListNode* even = NULL;
+        ListNode *even = NULL;
 
         int count = 1;
 
-         ListNode* odd = head;
-         ListNode* odd2 = head;
+        ListNode *odd = head;
+        ListNode *odd2 = head;
 
-         ListNode* temp = head;
-         ListNode* tempeven = NULL;
+        ListNode *temp = head;
+        ListNode *tempeven = NULL;
 
-        while(head != NULL)
+        while (head != NULL)
         {
-            if(count%2 == 0)
+            if (count % 2 == 0)
             {
-                if(even == NULL){
+                if (even == NULL)
+                {
                     even = new ListNode(head->val);
                     tempeven = even;
                 }
-                else{           
+                else
+                {
                     even->next = new ListNode(head->val);
                     even = even->next;
                 }
             }
-            else{
+            else
+            {
                 odd2 = odd;
                 odd->val = head->val;
                 odd = odd->next;
@@ -55,14 +58,10 @@ public:
 
             head = head->next;
             count++;
-
         }
-
-
 
         odd2->next = tempeven;
 
         return temp;
-        
     }
 };

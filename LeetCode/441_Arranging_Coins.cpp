@@ -3,30 +3,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int arrangeCoins(int n) {
+    int arrangeCoins(int n)
+    {
 
         int count = 0;
-        
 
         int i = 1;
         long coin = 0;
-        while(n)
+        while (n)
         {
             coin = i + coin;
-            if(coin <= n)
+            if (coin <= n)
             {
                 count++;
                 i++;
             }
-            else{
+            else
+            {
                 break;
             }
-
-
         }
-        
+
         return count;
     }
 };

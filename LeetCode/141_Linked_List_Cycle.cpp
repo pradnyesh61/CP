@@ -3,7 +3,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -12,67 +11,68 @@ using namespace std;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-
-    bool cycle(ListNode* head,ListNode* Twohead)
+    bool cycle(ListNode *head, ListNode *Twohead)
     {
-        cout<<head->val<<" = "<<Twohead->val<<endl;
-        cout<<head<<" = "<<Twohead<<endl;
-        
-        if(head == NULL || Twohead == NULL)
+        cout << head->val << " = " << Twohead->val << endl;
+        cout << head << " = " << Twohead << endl;
+
+        if (head == NULL || Twohead == NULL)
         {
-                        cout<<"no"<<endl;
+            cout << "no" << endl;
             return false;
         }
 
-        if(Twohead == head){
-            cout<<"hi"<<endl;
+        if (Twohead == head)
+        {
+            cout << "hi" << endl;
             return true;
         }
 
-        if(Twohead->next->next != NULL)
+        if (Twohead->next->next != NULL)
         {
             Twohead = Twohead->next->next;
         }
 
-        if(head->next != NULL)
+        if (head->next != NULL)
         {
             head = head->next;
         }
 
-        bool c =  cycle(head,Twohead);
-        cout<<c<<endl;
+        bool c = cycle(head, Twohead);
+        cout << c << endl;
         return c;
     }
 
-   
-    bool hasCycle1(ListNode *head) {
-        
-    
-       if(head==NULL || head->next == NULL || head->next->next == NULL)
-       {
-           return false;
-       }
+    bool hasCycle1(ListNode *head)
+    {
 
-        return cycle(head,head->next->next);
+        if (head == NULL || head->next == NULL || head->next->next == NULL)
+        {
+            return false;
+        }
+
+        return cycle(head, head->next->next);
     }
 
-     bool hasCycle(ListNode *head) {
+    bool hasCycle(ListNode *head)
+    {
         ListNode *fast = head;
         ListNode *slow = head;
 
-        while(fast != NULL && fast->next != NULL){
+        while (fast != NULL && fast->next != NULL)
+        {
             fast = fast->next->next;
             slow = slow->next;
 
-            if(fast == slow)
+            if (fast == slow)
             {
                 return true;
             }
         }
 
         return false;
-
     }
 };

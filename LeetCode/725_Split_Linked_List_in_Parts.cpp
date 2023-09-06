@@ -2,7 +2,6 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -13,65 +12,52 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution
-{
+class Solution {
 public:
-    vector<ListNode *> splitListToParts(ListNode *head, int k)
-    {
-
-        ListNode *temp = head;
+    vector<ListNode*> splitListToParts(ListNode* head, int k) {
+        
+        ListNode* temp = head;
         int count = 0;
 
-        while (temp != NULL)
+        while(temp != NULL)
         {
             count++;
             temp = temp->next;
         }
 
-        vector<ListNode *> v;
+            vector<ListNode*> v;
 
-        temp = head;
+            temp = head;
 
-        while (k)
-        {
-            int t = ceil((float)count / k);
-            ListNode *list = NULL;
-            ListNode *listtemp = list;
-
-            if (t == 1)
+            while(k)
             {
-                if (temp != NULL)
-                {
-                    list = new ListNode(temp->val);
-                    temp = temp->next;
-                    count--;
-                    listtemp = list;
-                }
-            }
-            else
-            {
-                while (t)
-                {
-
-                    if (list == NULL)
-                    {
-                        list = new ListNode(temp->val);
-                        listtemp = list;
+                int t = ceil((float)count/k);
+                ListNode* list = NULL;
+                ListNode* listtemp = list;
+                    while(t)
+                    {                        
+                        if(temp != NULL){
+                            if(list == NULL)
+                            {
+                                list = new ListNode(temp->val);
+                                listtemp = list;   
+                            }
+                            else
+                            {
+                                list->next = new ListNode(temp->val);
+                                list = list->next;
+                            }
+                            temp = temp->next;
+                            t--;
+                            count--;
+                        } 
                     }
-                    else
-                    {
-                        list->next = new ListNode(temp->val);
-                        list = list->next;
-                    }
-                    temp = temp->next;
-                    t--;
-                    count--;
-                }
+                
+                v.push_back(listtemp);
+                k--;
             }
-            v.push_back(listtemp);
-            k--;
-        }
 
-        return v;
+            return v;
+        
     }
 };

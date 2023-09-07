@@ -13,50 +13,52 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* reverseBetween(ListNode* head, int left, int right) {
+    ListNode *reverseBetween(ListNode *head, int left, int right)
+    {
 
-        if(left == 1 && right == 1)
+        if (left == 1 && right == 1)
         {
             return head;
         }
 
-        ListNode* current = head;
+        ListNode *current = head;
         int count = 1;
 
-        ListNode* start = head;
+        ListNode *start = head;
 
-        while(count < left)
+        while (count < left)
         {
             start = current;
             current = current->next;
             count++;
         }
 
-        ListNode* prev = start->next;
-        ListNode* next = current;
+        ListNode *prev = start->next;
+        ListNode *next = current;
 
-        while(count <= right)
+        while (count <= right)
         {
             next = current->next;
             current->next = prev;
             prev = current;
             current = next;
             count++;
-        }    
+        }
 
-        if(left == 1)
+        if (left == 1)
         {
             start->next = next;
             return prev;
         }
 
-        if(start->next != NULL)
+        if (start->next != NULL)
             start->next->next = next;
 
         start->next = prev;
 
-        return head;        
+        return head;
     }
 };

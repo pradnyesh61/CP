@@ -3,15 +3,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int numberOfPoints(vector<vector<int>>& nums) {
-        
+    int numberOfPoints(vector<vector<int>> &nums)
+    {
+
         set<int> v;
 
-        for(auto it : nums)
+        for (auto it : nums)
         {
-            for(int i = it[0] ; i <= it[1] ; i++)
+            for (int i = it[0]; i <= it[1]; i++)
             {
                 v.insert(i);
             }

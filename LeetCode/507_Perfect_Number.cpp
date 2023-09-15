@@ -3,24 +3,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    bool checkPerfectNumber(int num) {
-        
+    bool checkPerfectNumber(int num)
+    {
+
         vector<int> v;
 
         int sum = 0;
 
-        for(int i = 1 ; i < num; i++)
+        for (int i = 1; i < num; i++)
         {
-            if(num%i == 0)
+            if (num % i == 0)
             {
                 sum += i;
             }
         }
 
-        if(sum == num)
+        if (sum == num)
         {
             return true;
         }

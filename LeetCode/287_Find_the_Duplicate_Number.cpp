@@ -3,19 +3,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int findDuplicate(vector<int>& nums) {
-        
-        unordered_map<int,int> m;
+    int findDuplicate(vector<int> &nums)
+    {
 
-        for(auto it : nums)
+        unordered_map<int, int> m;
+
+        for (auto it : nums)
         {
-            if(m[it])
+            if (m[it])
             {
                 return it;
             }
-            
+
             m[it]++;
         }
 

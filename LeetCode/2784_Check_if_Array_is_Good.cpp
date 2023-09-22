@@ -3,31 +3,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    bool isGood(vector<int>& nums) {
+    bool isGood(vector<int> &nums)
+    {
 
-        map<int,int> m;
+        map<int, int> m;
         int maxi = INT_MIN;
 
-        for(auto it : nums)
+        for (auto it : nums)
         {
-            if(it > maxi)
+            if (it > maxi)
             {
                 maxi = it;
             }
             m[it]++;
         }
 
-        if(maxi+1 != nums.size())
-        return false;
+        if (maxi + 1 != nums.size())
+            return false;
 
-        if(m[maxi] == 2)
+        if (m[maxi] == 2)
         {
-            for(auto it : m)
+            for (auto it : m)
             {
-                if(it.second > 1 && it.first != maxi)
+                if (it.second > 1 && it.first != maxi)
                 {
                     return false;
                 }

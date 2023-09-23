@@ -11,20 +11,22 @@ using namespace std;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode *detectCycle(ListNode *head) {
-        
-        ListNode* temp = head;
+    ListNode *detectCycle(ListNode *head)
+    {
+
+        ListNode *temp = head;
 
         int i = 0;
-     
-        ListNode* fast = head;
-        ListNode* slow = head;
-        
-        while(fast != NULL)
+
+        ListNode *fast = head;
+        ListNode *slow = head;
+
+        while (fast != NULL)
         {
-            if(fast->next == NULL || fast->next->next == NULL)
+            if (fast->next == NULL || fast->next->next == NULL)
             {
                 return NULL;
             }
@@ -32,28 +34,24 @@ public:
             fast = fast->next->next;
             slow = slow->next;
 
-            cout<<"fast = "<<fast->val<<" Slow = "<<slow->val<<endl;
+            cout << "fast = " << fast->val << " Slow = " << slow->val << endl;
 
-             if(fast == slow)
+            if (fast == slow)
             {
-                ListNode* entry = head;
-                cout<<entry->val<<" :=: "<<slow->val<<endl;
-                    
-                while(entry != slow)
+                ListNode *entry = head;
+                cout << entry->val << " :=: " << slow->val << endl;
+
+                while (entry != slow)
                 {
                     entry = entry->next;
                     slow = slow->next;
-                cout<<entry->val<<" :=: "<<slow->val<<endl;
-                    
+                    cout << entry->val << " :=: " << slow->val << endl;
                 }
 
                 return entry;
             }
-             
-
         }
 
         return temp;
-
     }
 };

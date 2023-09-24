@@ -3,15 +3,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    string maximumOddBinaryNumber(string s) {
-        
+    string maximumOddBinaryNumber(string s)
+    {
+
         int count = 0;
 
-        for(int i = 0; i < s.size();i++)
+        for (int i = 0; i < s.size(); i++)
         {
-            if(s[i] == '1')
+            if (s[i] == '1')
             {
                 count++;
             }
@@ -19,16 +21,16 @@ public:
             s[i] = '0';
         }
 
-        s[s.size()-1] = '1';
+        s[s.size() - 1] = '1';
 
-        if(count == 1)
+        if (count == 1)
         {
             return s;
         }
 
         count--;
 
-        for(int i = 0; i < count;i++)
+        for (int i = 0; i < count; i++)
         {
             s[i] = '1';
         }

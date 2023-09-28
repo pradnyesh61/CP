@@ -3,22 +3,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    int sumOfUnique(vector<int>& nums) {
-        
-        map<int,int> m;
-        for(auto it : nums)
+    int sumOfUnique(vector<int> &nums)
+    {
+
+        map<int, int> m;
+        for (auto it : nums)
         {
             m[it]++;
         }
 
         int sum = 0;
 
-        for(auto it : m)
+        for (auto it : m)
         {
-            if(it.second == 1)
+            if (it.second == 1)
             {
                 sum += it.first;
             }

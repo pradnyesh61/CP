@@ -3,31 +3,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
-
+class Solution
+{
 
 public:
-    int findLeastNumOfUniqueInts(vector<int>& arr, int k) {
-        
-        map<int,int> m;
+    int findLeastNumOfUniqueInts(vector<int> &arr, int k)
+    {
 
-        for(auto it: arr)
+        map<int, int> m;
+
+        for (auto it : arr)
         {
             m[it]++;
         }
 
         vector<int> v;
 
-        for(auto it : m)
+        for (auto it : m)
         {
             v.push_back(it.second);
         }
 
-        sort(v.begin(),v.end());
+        sort(v.begin(), v.end());
 
-        for(int i = 0 ; i < v.size() ; i++)
+        for (int i = 0; i < v.size(); i++)
         {
-            while(v[i] > 0 && k > 0)
+            while (v[i] > 0 && k > 0)
             {
                 v[i]--;
                 k--;
@@ -36,15 +37,14 @@ public:
 
         int count = 0;
 
-        for(auto it : v)
+        for (auto it : v)
         {
-            if(it != 0)
+            if (it != 0)
             {
                 count++;
             }
         }
- 
-        return count;
 
+        return count;
     }
 };

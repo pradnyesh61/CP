@@ -3,38 +3,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int maxPower(string s) {
-        
-      int maxi = 1;
+    int maxPower(string s)
+    {
 
-      int count = 1;
+        int maxi = 1;
 
-      for(int i = 1; i < s.length() ;i++)
-      {
-          if(s[i] == s[i-1])
-          {
-              count++;
-          }
-          else{
-              if(maxi < count)
-              {
-                  maxi = count;
-                 
-              }
-               count = 1;
-          }
-           cout<<count<<endl;
-      }
+        int count = 1;
 
-      if(count > maxi)
-      {
-          return count;
-      }
+        for (int i = 1; i < s.length(); i++)
+        {
+            if (s[i] == s[i - 1])
+            {
+                count++;
+            }
+            else
+            {
+                if (maxi < count)
+                {
+                    maxi = count;
+                }
+                count = 1;
+            }
+            cout << count << endl;
+        }
+
+        if (count > maxi)
+        {
+            return count;
+        }
 
         return maxi;
-
     }
-
 };

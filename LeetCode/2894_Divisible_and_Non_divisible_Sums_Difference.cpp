@@ -3,23 +3,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    int differenceOfSums(int n, int m) {
-        
+    int differenceOfSums(int n, int m)
+    {
+
         int sum1 = 0;
         int sum2 = 0;
 
-
-        for(int i = 1 ; i <= n; i++)
+        for (int i = 1; i <= n; i++)
         {
-            if(i % m == 0)
+            if (i % m == 0)
                 sum2 += i;
             else
-            sum1 += i;
+                sum1 += i;
         }
 
-        return sum1-sum2;
+        return sum1 - sum2;
     }
 };

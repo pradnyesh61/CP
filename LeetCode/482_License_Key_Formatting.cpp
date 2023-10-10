@@ -3,38 +3,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-class Solution {
+class Solution
+{
 public:
-    string licenseKeyFormatting(string s, int k) {
+    string licenseKeyFormatting(string s, int k)
+    {
         stack<char> st;
 
-        for(auto it:s)
+        for (auto it : s)
         {
-            if(it != '-')
+            if (it != '-')
             {
                 st.push(toupper(it));
             }
         }
 
-        string ans ="";
+        string ans = "";
 
-        while(!st.empty())
+        while (!st.empty())
         {
-            for(int i = 0; i < k;i++)
+            for (int i = 0; i < k; i++)
             {
-                if(st.empty())
+                if (st.empty())
                     break;
 
                 ans += st.top();
-                st.pop();   
+                st.pop();
             }
 
-            if(!st.empty())
-            ans += '-';
+            if (!st.empty())
+                ans += '-';
         }
 
-        reverse(ans.begin(),ans.end());
+        reverse(ans.begin(), ans.end());
         return ans;
     }
 };

@@ -3,49 +3,51 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> sortArrayByParityII(vector<int>& nums) {
+    vector<int> sortArrayByParityII(vector<int> &nums)
+    {
         vector<int> even;
         vector<int> odd;
 
-        for(auto it : nums)
+        for (auto it : nums)
         {
-            if(it%2 == 0)
+            if (it % 2 == 0)
             {
                 even.push_back(it);
             }
-            else{
+            else
+            {
                 odd.push_back(it);
             }
         }
 
-
         int k = 0;
         int j = 0;
 
-        cout<<"even = ";
-        for(auto it : even)
+        cout << "even = ";
+        for (auto it : even)
         {
-            cout<<it<<" ";
+            cout << it << " ";
         }
 
-        
-        cout<<endl<<"Odd = ";
-        for(auto it : odd)
+        cout << endl
+             << "Odd = ";
+        for (auto it : odd)
         {
-            cout<<it<<" ";
+            cout << it << " ";
         }
 
-
-        for(int i = 0 ; i< nums.size();i++)
+        for (int i = 0; i < nums.size(); i++)
         {
-            if(i%2 == 0)
+            if (i % 2 == 0)
             {
                 nums[i] = even[j];
                 j++;
             }
-            else{
+            else
+            {
                 nums[i] = odd[k];
                 k++;
             }

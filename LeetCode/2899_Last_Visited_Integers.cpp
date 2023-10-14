@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std
 
-    class Solution
+class Solution
 {
 public:
     vector<int> lastVisitedIntegers(vector<string> &words)

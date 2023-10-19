@@ -3,17 +3,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    bool backspaceCompare(string s, string t) {
-        
+    bool backspaceCompare(string s, string t)
+    {
+
         stack<char> st;
 
-        for(auto it : s)
+        for (auto it : s)
         {
-            if(it == '#')
+            if (it == '#')
             {
-                if(!st.empty())
+                if (!st.empty())
                     st.pop();
             }
             else
@@ -24,12 +26,12 @@ public:
 
         stack<char> st2;
 
-         for(auto it : t)
+        for (auto it : t)
         {
-            if(it == '#')
+            if (it == '#')
             {
-            if(!st2.empty())
-                st2.pop();
+                if (!st2.empty())
+                    st2.pop();
             }
             else
             {
@@ -38,6 +40,5 @@ public:
         }
 
         return st == st2;
-
     }
 };

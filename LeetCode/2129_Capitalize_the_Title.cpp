@@ -3,47 +3,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    string capitalizeTitle(string title) {
-        
-       vector<string> v;
+    string capitalizeTitle(string title)
+    {
 
-       title.push_back(' ');
+        vector<string> v;
 
-       string t ="";
+        title.push_back(' ');
 
-       for(auto it : title)
-       {
-           if(it == ' ')
-           {
-               for(int q = 0; q < t.size() ; q++)
-               {
-                   t[q] = tolower(t[q]);
-               }
-               v.push_back(t);
-            t = "";
-           }
-            else{
+        string t = "";
+
+        for (auto it : title)
+        {
+            if (it == ' ')
+            {
+                for (int q = 0; q < t.size(); q++)
+                {
+                    t[q] = tolower(t[q]);
+                }
+                v.push_back(t);
+                t = "";
+            }
+            else
+            {
                 t += it;
             }
-       }
+        }
 
-       title = "";
+        title = "";
 
-       for(auto it : v)
-       {
-           t = it;
-           if(t.size() > 2)
-           {
-               t[0] =toupper(t[0]);
-           }
+        for (auto it : v)
+        {
+            t = it;
+            if (t.size() > 2)
+            {
+                t[0] = toupper(t[0]);
+            }
 
-           title += t+' ';
-       }
+            title += t + ' ';
+        }
 
-       title.pop_back();
+        title.pop_back();
         return title;
-
     }
 };

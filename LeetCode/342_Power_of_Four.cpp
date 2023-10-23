@@ -3,21 +3,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    bool isPowerOfFour(int n) {
-        
-        if(n > 0)
+    bool isPowerOfFour(int n)
+    {
+
+        if (n > 0)
         {
-            int k = log2(n)/2;
-            
-            if(k*2 == log2(n))
+            int k = log2(n) / 2;
+
+            if (k * 2 == log2(n))
             {
                 return true;
             }
         }
-        
-       return false; 
-       
+
+        return false;
     }
 };

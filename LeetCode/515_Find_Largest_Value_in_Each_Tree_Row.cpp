@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 /**
- * 
+ *
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -14,41 +14,43 @@ using namespace std;
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    vector<int> largestValues(TreeNode* root) {
-        
+    vector<int> largestValues(TreeNode *root)
+    {
+
         vector<int> ans;
 
-        if(root ==NULL)
+        if (root == NULL)
         {
             return ans;
         }
 
-        queue<TreeNode*> q;
+        queue<TreeNode *> q;
         q.push(root);
 
-        while(!q.empty())
+        while (!q.empty())
         {
             int sz = q.size();
             int maxi = INT_MIN;
 
-            for(int i = 0 ; i < sz; i++)
+            for (int i = 0; i < sz; i++)
             {
-                TreeNode* temp = q.front();
+                TreeNode *temp = q.front();
                 q.pop();
 
-                if(maxi < temp->val)
+                if (maxi < temp->val)
                 {
                     maxi = temp->val;
                 }
 
-                if(temp->left != NULL)
+                if (temp->left != NULL)
                 {
                     q.push(temp->left);
                 }
 
-                if(temp->right != NULL)
+                if (temp->right != NULL)
                 {
                     q.push(temp->right);
                 }
@@ -58,6 +60,5 @@ public:
         }
 
         return ans;
-
     }
 };

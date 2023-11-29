@@ -3,24 +3,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int hammingWeight(uint32_t n) {
-        
+    int hammingWeight(uint32_t n)
+    {
+
         int count = 0;
 
-        while(n)
+        while (n)
         {
-            if(n % 2)
+            if (n % 2)
             {
                 count++;
             }
-            
+
             n /= 2;
-            
         }
 
         return count;
     }
 };
-

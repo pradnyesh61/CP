@@ -3,16 +3,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int appendCharacters(string s, string t) {
-        
+    int appendCharacters(string s, string t)
+    {
+
         int j = 0;
         int i = 0;
 
-        while(i < s.size())
+        while (i < s.size())
         {
-            if(s[i] == t[j])
+            if (s[i] == t[j])
             {
                 j++;
             }
@@ -20,6 +22,6 @@ public:
             i++;
         }
 
-        return t.size()-j;
+        return t.size() - j;
     }
 };
